@@ -1,0 +1,69 @@
+public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);    System.out.print("Write first dog's name: ");
+
+    String firstDogName = input.nextLine();
+
+    // Задаваме променлива
+
+    Dog firstDog = new Dog(firstDogName);
+    
+    System.out.print("Write second dog's name: ");
+
+    Dog secondDog = new Dog();
+
+    // Assign dog name with a property
+
+    secondDog.setName(input.nextLine());
+
+    // Create a dog with a default name
+
+    Dog thirdDog = new Dog();
+
+    Dog[] dogs = new Dog[] { firstDog, secondDog, thirdDog };
+
+    for (Dog dog : dogs) {
+
+        dog.bark();
+        input.close();
+        
+        }
+    }
+}
+
+private String name;
+    
+    //Дефинираме конструктор
+ 
+    public Dog() {
+
+        this.name = "Sharo";
+    }
+
+    public Dog(String name) {
+
+        this.name = name;
+    }
+
+    //getter-method
+
+    public String getName() {
+
+        return this.name;
+    }
+    //setter-method 
+
+    public void setName(String name) {
+
+        this.name = name;
+    }
+
+    // Дефинираме метода
+
+    public void bark() {
+
+    	
+        System.out.printf("Dog %s said: Wow-wow!%n", name);
+    }
+  
+}
